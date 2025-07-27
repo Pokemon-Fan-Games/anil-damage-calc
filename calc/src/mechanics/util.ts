@@ -109,7 +109,8 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
     speedMods.push(8192);
   } else if (
     (pokemon.named('Cherrim') && pokemon.hasAbility('Flower Gift') && weather.includes('Sun')) ||
-    (pokemon.hasAbility('Bull Rush', 'Quill Rush') && pokemon.abilityOn)
+    (pokemon.hasAbility('Poder Gélido') && weather.includes('Hail')) ||
+    (pokemon.hasAbility('Acometida', 'Quill Rush') && pokemon.abilityOn)
   ) {
     speedMods.push(6144);
   } else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
@@ -243,6 +244,19 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
     if (target.hasAbility('Competitive')) {
       target.boosts.spa = Math.min(6, target.boosts.spa + 2);
     }
+  }
+  else if (source.hasAbility('Espanto') && source.abilityOn && !blocked) {
+    if (target.hasAbility('Contrary', 'Defiant', 'Guard Dog')) {
+      target.boosts.spa = Math.min(6, target.boosts.spa + 1);
+    } else if (target.hasAbility('Simple')) {
+      target.boosts.spa = Math.max(-6, target.boosts.spa - 2);
+    } else {
+      target.boosts.spa = Math.max(-6, target.boosts.spa - 1);
+    }
+    if (target.hasAbility('Competitive')) {
+      target.boosts.atk = Math.min(6, target.boosts.atk + 2);
+    }
+
   }
 }
 

@@ -339,28 +339,26 @@ const SV = SS.concat([
   'Zero to Hero',
 ]);
 
-const RR = SV.concat([
-  'Bad Company',
-  'Blazing Soul',
-  'Blubber Defense',
-  'Bone Zone',
-  'Bull Rush',
-  'Cash Splash',
-  'Fatal Precision',
-  'Feline Prowess',
-  'Mountaineer',
-  'ORAORAORAORA',
-  'Parasitic Waste',
-  'Phoenix Down',
-  'Primal Armor',
-  'Quill Rush',
-  'Sage Power',
-  'Self Sufficient',
-  'Striker',
-  'Surprise!',
+const ANIL = SV.concat([
+  'Sobrecarga', //Done
+  'Poder Sabio', //'Sage Power'
+  'Coleóptero', //Done
+  'Piel Tétrica', //Done
+  'Piel Herbácea', //Done
+  'Espanto', //Done
+  'Iceberg', //Done
+  'Inflamable', //Done
+  'Albino', //Done
+  'Floración', //Done
+  'Realeza', //Done
+  'Acometida', //Done
+  'Poder Gélido', //Done
+  'Silvano', //Done
+  'Tintineo',
+  'Camorrista', //'Striker',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, RR];
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, ANIL];
 
 export class Abilities implements I.Abilities {
   private readonly gen: I.GenerationNum;

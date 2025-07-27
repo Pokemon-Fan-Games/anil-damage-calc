@@ -249,7 +249,9 @@ export function calculateBPModsADV(
     ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
      (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
      (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
-     (attacker.hasAbility('Swarm') && move.hasType('Bug')))
+     (attacker.hasAbility('Swarm') && move.hasType('Bug')) || 
+     (attacker.hasAbility('Sobrecarga') && move.hasType('Electric')) )
+
   ) {
     basePower = Math.floor(basePower * 1.5);
     desc.attackerAbility = attacker.ability;

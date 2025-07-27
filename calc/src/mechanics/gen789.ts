@@ -235,6 +235,9 @@ export function calculateSMSSSV(
   let isPixilate = false;
   let isRefrigerate = false;
   let isGalvanize = false;
+  let isPielElectrica = false;
+  let isPielTetrica = false;
+  let isPielHerbacea = false;
   let isLiquidVoice = false;
   let isNormalize = false;
   const noTypeChange = move.named(
@@ -262,10 +265,16 @@ export function calculateSMSSSV(
       type = 'Fairy';
     } else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
       type = 'Ice';
+    } else if ((isPielElectrica = attacker.hasAbility('Piel Eléctrica') && normal)) {
+      type = 'Electric';
+    } else if ((isPielTetrica = attacker.hasAbility('Piel Tétrica') && normal)) {
+      type = 'Ghost';
+    } else if ((isPielHerbacea = attacker.hasAbility('Piel Herbácea') && normal)) {
+      type = 'Grass';
     } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
       type = 'Normal';
     }
-    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize) {
+    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize || isPielElectrica || isPielTetrica || isPielHerbacea) {
       desc.attackerAbility = attacker.ability;
       hasAteAbilityTypeChange = true;
     } else if (isLiquidVoice) {
@@ -1128,7 +1137,7 @@ export function calculateBPModsSMSSSV(
     (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
     (attacker.hasAbility('Punk Rock') && move.flags.sound) ||
     (attacker.hasAbility('Iron Fist') && move.flags.punch) ||
-    (attacker.hasAbility('Striker') && move.flags.kick) ||
+    (attacker.hasAbility('Camorrista') && move.flags.kick) ||
     (attacker.hasAbility('Illusion') && attacker.abilityOn)
   ) {
     bpMods.push(5325);
@@ -1305,7 +1314,7 @@ export function calculateAtModsSMSSSV(
     // Gorilla Tactics has no effect during Dynamax (Anubis)
     (attacker.hasAbility('Gorilla Tactics') && move.category === 'Physical' &&
      !attacker.isDynamaxed) ||
-    (attacker.hasAbility('Sage Power') && move.category === 'Special' &&
+    (attacker.hasAbility('Poder Sabio') && move.category === 'Special' &&
      !attacker.isDynamaxed)) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1333,7 +1342,12 @@ export function calculateAtModsSMSSSV(
   } else if (
     (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
-    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock'))
+    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock')) ||
+    (attacker.hasAbility('Albino') && move.hasType('Ice')) ||
+    (attacker.hasAbility('Inflamable') && move.hasType('Fire')) ||
+    (attacker.hasAbility('Floración') && move.hasType('Grass')) ||
+    (attacker.hasAbility('Poder Gélido') && move.hasType('Ice') && field.hasWeather('Hail')) ||
+    (attacker.hasAbility('Realeza') && !attacker.types.includes(move.type))
   ) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1349,6 +1363,9 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Feline Prowess') && move.category === 'Special')
   ) {
     atMods.push(8192);
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Silvano') && field.hasTerrain('Grassy')) {
+    atMods.push(5325);
     desc.attackerAbility = attacker.ability;
   }
 
@@ -1401,7 +1418,7 @@ export function calculateAtModsSMSSSV(
     desc.attackerAbility = attacker.ability;
   }
 
-  if (attacker.hasAbility('Bull Rush', 'Quill Rush') && move.category === 'Physical' && attacker.abilityOn) {
+  if (attacker.hasAbility('Acometida', 'Quill Rush') && move.category === 'Physical' && attacker.abilityOn) {
     atMods.push(4915);
     desc.attackerAbility = attacker.ability;
   }

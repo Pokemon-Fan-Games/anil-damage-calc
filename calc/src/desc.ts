@@ -171,7 +171,9 @@ export function getRecoil(
   let recoil: [number, number] | number = [0, 0];
   let text = '';
 
-  const damageOverflow = minDamage > defender.curHP() || maxDamage > defender.curHP();
+  const minNum = typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1];
+  const maxNum = typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1];
+  const damageOverflow = minNum > defender.curHP() || maxNum > defender.curHP();
   if (move.recoil) {
     const mod = (move.recoil[0] / move.recoil[1]) * 100;
     let minRecoilDamage, maxRecoilDamage;
@@ -188,7 +190,7 @@ export function getRecoil(
         notation, Math.min(max, defender.curHP()) * mod, attacker.maxHP(), 100
       );
     }
-    if (!attacker.hasAbility('Rock Head', 'Bad Company')) {
+    if (!attacker.hasAbility('Rock Head', 'Bad Company', 'Iceberg')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
       text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
