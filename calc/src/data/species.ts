@@ -10053,7 +10053,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Beedrill': {bs: {at: 100, sa: 65, sp: 95}},
   'Beheeyem': {bs: {hp: 95}},
   'Bibarel': {bs: {df: 80, sd: 80, sp: 50}},
-  'Blitzle': {},
   'Boltund': {bs: {at: 100, sa: 80}},
   'Bombirdier': {bs: {hp: 85}},
   'Bouffalant': {bs: {hp: 100, sp: 65}},
@@ -10074,7 +10073,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Cherrim': {bs: {at: 100, sa: 60}},
   'Cherrim-Sunshine': {bs: {at: 100, sa: 60}},
   'Chimecho': {bs: {hp: 90, sp: 80}},
-  'Clauncher': {},
   'Clawitzer': {bs: {sp: 72}},
   'Claydol': {bs: {sa: 80}},
   'Clobbopus': {types: ['Water', 'Fighting']},
@@ -10095,11 +10093,8 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Delcatty': {bs: {sa: 65}},
   'Delibird': {bs: {at: 100, sp: 105}},
   'Dewgong': {bs: {hp: 95, at: 50, sa: 90}},
-  'Dhelmise': {},
   'Dialga': {otherFormes: ['Dialga-Primal']},
   'Diglett': {bs: {hp: 30, at: 60, df: 35}},
-  'Dodrio': {},
-  'Doduo': {},
   'Drampa': {bs: {hp: 103, at: 50}},
   'Drednaw': {otherFormes: ['Drednaw-Mega']},
   'Druddigon': {bs: {hp: 90, sp: 41}},
@@ -10121,7 +10116,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Falinks': {types: ['Fighting', 'Bug'], bs: {hp: 75, sa: 60}},
   'Farfetch\u2019d': {types: ['Fighting', 'Flying'], bs: {hp: 75, df: 70, sd: 77, sp: 65}},
   'Fearow': {bs: {at: 115}, abilities: {0: 'Sniper'}},
-  'Feebas': {},
   'Fezandipiti': {bs: {at: 70, sa: 91, sp: 99}},
   'Flamigo': {bs: {hp: 92, sd: 74}},
   'Flapple': {otherFormes: ['Flapple-Mega']},
@@ -10211,9 +10205,7 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Nidoking': {bs: {at: 92}},
   'Noctowl': {bs: {hp: 110}},
   'Nintetales': {bs: {sa: 100}},
-  'Noibat': {},
   'Noivern': {bs: {sa: 102}},
-  'Nymble': {},
   'Octillery': {bs: {sp: 75}},
   'Onix': {bs: {hp: 50, at: 60, df: 150, sp: 65}},
   'Oranguru': {bs: {df: 110, sd: 80}},
@@ -10307,7 +10299,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Tauros-Paldea-Aqua': {types: ['Water', 'Fighting'], bs: {sa: 60}},
   'Tauros-Paldea-Blaze': {types: ['Fire', 'Fighting'], bs: {sa: 60}},
   'Tauros-Paldea-Combat': {bs: {sa: 60}},
-  'Teddiursa': {otherFormes: ['Teddiursa-Sevii']},
   'Tentacruel': {bs: {at: 60, df: 80, sa: 90}},
   'Terapagos-Terastal': {bs: {hp: 110}},
   'Thievul': {bs: {sa: 97, sp: 110}},
@@ -10348,13 +10339,11 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Xatu': {bs: {sa: 105, sp: 105}},
   'Xurkitree': {bs: {at: 69, sp: 98}},
   'Zangoose': {bs: {df: 70, sd: 70, sp: 100}},
-  'Zebstrika': {},
   'Zubat': {bs: {at: 55, sp:75}},
   'Alcremie-Mega': {
     types: ['Fairy'],
     bs: {hp: 65, at: 70, df: 95, sa: 140, sd: 131, sp: 84},
     weightkg: 0.5,
-    abilities: {0: 'Self Sufficient'},
     baseSpecies: 'Alcremie',
   },
   'Appletun-Mega': {
@@ -10437,7 +10426,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Fighting'],
     bs: {hp: 90, at: 145, df: 110, sa: 65, sd: 115, sp: 75},
     weightkg: 130,
-    abilities: {0: 'ORAORAORAORA'},
     baseSpecies: 'Machamp',
   },
   'Orbeetle-Mega': {
@@ -10453,14 +10441,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 65.5,
     abilities: {0: 'Aerilate'},
     baseSpecies: 'Sandaconda',
-  },
-  'Sizzlipede-Sevii': {
-    types: ['Ground', 'Bug'],
-    bs: {hp: 50, at: 65, df: 45, sa: 50, sd: 50, sp: 45},
-    weightkg: 1,
-    abilities: {0: 'Shed Skin'},
-    nfe: true,
-    baseSpecies: 'Sizzlipede',
   },
   'Snorlax-Mega': {
     types: ['Normal', 'Grass'],
@@ -10521,12 +10501,12 @@ this.id = toID(name);
 this.name = name as I.SpeciesName;
 
 const baseStats: Partial<I.StatsTable> = {};
-baseStats.hp = data.bs.hp;
-baseStats.atk = data.bs.at;
-baseStats.def = data.bs.df;
-baseStats.spa = gen >= 2 ? data.bs.sa : data.bs.sl;
-baseStats.spd = gen >= 2 ? data.bs.sd : data.bs.sl;
-baseStats.spe = data.bs.sp;
+baseStats.hp = data.bs?.hp;
+baseStats.atk = data.bs?.at;
+baseStats.def = data.bs?.df;
+baseStats.spa = gen >= 2 ? data.bs?.sa : data.bs?.sl;
+baseStats.spd = gen >= 2 ? data.bs?.sd : data.bs?.sl;
+baseStats.spe = data.bs?.sp;
 this.baseStats = baseStats as I.StatsTable;
 // Hack for getting Gmax pokemon out of existence in Gen 9+
 if (data.otherFormes) {
@@ -10547,7 +10527,7 @@ let gen = 0;
 for (const species of SPECIES) {
   const map: {[id: string]: Specie} = {};
   for (const specie in species) {
-    if (gen >= 2 && species[specie].bs.sl) delete species[specie].bs.sl;
+    if (gen >= 2 && species[specie].bs?.sl) delete species[specie].bs.sl;
     const m = new Specie(specie, species[specie]);
     map[m.id] = m;
   }
