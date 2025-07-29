@@ -141,6 +141,7 @@ export function getRecovery(
       for (const j in recovery) {
         let drained = Math.round(range[j] * percentHealed);
         if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 5324 / 4096);
+        if (attacker.hasAbility('Raíz Robusta')) drained = Math.trunc(drained * 5324 / 4096);
         recovery[j] += Math.min(drained * move.hits, max);
       }
     }
@@ -548,6 +549,7 @@ function getEndOfTurn(
   if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
     let recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
     if (defender.hasItem('Big Root')) recovery = Math.trunc(recovery * 5324 / 4096);
+    if (defender.hasAbility('Raíz Robusta')) recovery = Math.trunc(recovery * 5324 / 4096);
     if (attacker.hasAbility('Liquid Ooze')) {
       damage -= recovery;
       texts.push('Liquid Ooze damage');

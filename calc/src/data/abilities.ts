@@ -356,6 +356,7 @@ const ANIL = SV.concat([
   'Silvano', //Done
   'Tintineo',
   'Camorrista', //'Striker',
+  'Raíz Robusta'
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, ANIL];
