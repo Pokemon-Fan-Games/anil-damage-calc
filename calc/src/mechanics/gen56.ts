@@ -365,7 +365,7 @@ export function calculateBWXY(
       // Check if lost -ate ability. Typing stays the same, only boost is lost
       // Cannot be regained during multihit move and no Normal moves with stat drawbacks
       hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
-      attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Piel Eléctrica', 'Piel Tétrica', 'Piel Herbácea');
+      attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Piel Eléctrica', 'Piel Tétrica', 'Piel Herbácea', 'Tintineo');
 
       if ((move.dropsStats && move.timesUsed! > 1)) {
         // Adaptability does not change between hits of a multihit, only between turns

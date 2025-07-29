@@ -240,6 +240,7 @@ export function calculateSMSSSV(
   let isPielHerbacea = false;
   let isLiquidVoice = false;
   let isNormalize = false;
+  let isTintineo = false;
   const noTypeChange = move.named(
     'Revelation Dance',
     'Judgment',
@@ -271,10 +272,12 @@ export function calculateSMSSSV(
       type = 'Ghost';
     } else if ((isPielHerbacea = attacker.hasAbility('Piel Herbácea') && normal)) {
       type = 'Grass';
+    } else if ((isTintineo = attacker.hasAbility('Tintineo') && normal)) {
+      type = 'Psychic';
     } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
       type = 'Normal';
     }
-    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize || isPielElectrica || isPielTetrica || isPielHerbacea) {
+    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize || isPielElectrica || isPielTetrica || isPielHerbacea || isTintineo) {
       desc.attackerAbility = attacker.ability;
       hasAteAbilityTypeChange = true;
     } else if (isLiquidVoice) {
