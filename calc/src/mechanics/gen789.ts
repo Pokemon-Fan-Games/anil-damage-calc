@@ -235,7 +235,6 @@ export function calculateSMSSSV(
   let isPixilate = false;
   let isRefrigerate = false;
   let isGalvanize = false;
-  let isPielElectrica = false;
   let isPielTetrica = false;
   let isPielHerbacea = false;
   let isLiquidVoice = false;
@@ -266,8 +265,6 @@ export function calculateSMSSSV(
       type = 'Fairy';
     } else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
       type = 'Ice';
-    } else if ((isPielElectrica = attacker.hasAbility('Piel Eléctrica') && normal)) {
-      type = 'Electric';
     } else if ((isPielTetrica = attacker.hasAbility('Piel Tétrica') && normal)) {
       type = 'Ghost';
     } else if ((isPielHerbacea = attacker.hasAbility('Piel Herbácea') && normal)) {
@@ -277,12 +274,13 @@ export function calculateSMSSSV(
     } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
       type = 'Normal';
     }
-    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize || isPielElectrica || isPielTetrica || isPielHerbacea || isTintineo) {
+    if (isGalvanize || isPixilate || isLiquidVoice || isRefrigerate || isAerilate || isNormalize || isPielTetrica || isPielHerbacea || isTintineo) {
       desc.attackerAbility = attacker.ability;
       hasAteAbilityTypeChange = true;
-    } else if (isLiquidVoice) {
-      desc.attackerAbility = attacker.ability;
     }
+    // } else if (isLiquidVoice) {
+    //   desc.attackerAbility = attacker.ability;
+    // }
   }
 
   if (move.named('Tera Blast') && attacker.teraType) {
@@ -637,7 +635,7 @@ export function calculateSMSSSV(
       // Check if lost -ate ability. Typing stays the same, only boost is lost
       // Cannot be regained during multihit move and no Normal moves with stat drawbacks
       hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
-        attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
+        attacker.hasAbility('Aerilate', 'Galvanize', 'Liquid Voice', 'Pixilate', 'Refrigerate', 'Normalize', 'Piel Tétrica', 'Piel Herbácea', 'Tintineo');
 
       if ((move.dropsStats && move.timesUsed! > 1)) {
         // Adaptability does not change between hits of a multihit, only between turns
