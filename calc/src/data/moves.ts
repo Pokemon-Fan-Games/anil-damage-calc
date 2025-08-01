@@ -4909,7 +4909,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Sky Uppercut': {bp: 95},
   'Rock Smash': {bp: 50},
   'Arm Thrust': {bp: 20},
-  'Blaze Kick': {bp: 90, isKick: true},
   'Ember': {bp: 45},
   'Bounce': {bp: 90},
   'Air Slash': {bp: 80},
@@ -4942,6 +4941,19 @@ const ANIL_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Octazooka': {bp: 85},
   'Water Gun': {bp: 45},
   'Clamp': {bp: 50},
+  'Blaze Kick': {bp: 90, isKick: true},
+  'High Jump Kick': {isKick: true},
+  'Jump Kick': {isKick: true},
+  'Low Kick': {isKick: true},
+  'Low Sweep': {isKick: true},
+  'Mega Kick': {isKick: true},
+  'Thunderous Kick': {isKick: true},
+  'Rolling Kick': {isKick: true},
+  'Double Kick': {isKick: true},
+  'Triple Kick': {isKick: true},
+  'Trop Kick': {isKick: true},
+  'Triple Axel': {isKick: true},
+  'Axe Kick': {isKick: true},
 }
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH, ANIL_PATCH);
