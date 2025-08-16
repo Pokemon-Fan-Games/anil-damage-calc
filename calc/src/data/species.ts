@@ -10072,11 +10072,10 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Capsakid': {bs: {hp: 52}},
   'Caterpie': {bs: {at: 40}},
   'Carnivine': {bs: {hp: 80, at: 110}},
-  'Castform': {bs: {hp: 90, at: 70, df: 90, sa: 100, sd: 90}},  
+  'Castform': {bs: {hp: 90, at: 70, df: 90, sa: 100, sd: 90}},
   'Castform-Rainy': {bs: {hp: 90, df: 90, sa: 130, sd: 90, sp: 100}},
   'Castform-Sunny': {bs: {hp: 90, df: 90, sa: 130, sd: 90, sp: 100}},
   'Castform-Snowy': {bs: {hp: 90, df: 90, sa: 130, sd: 90, sp: 100}},
-  'Celesteela': {bs: {hp: 87, at: 91, df: 93, sa: 97, sd: 91}},
   'Cefireon': { types: ['Flying'],
                 bs: {hp: 65, at: 65, df: 60, sa: 110, sd: 95, sp: 130},
                 abilities: {0: 'Lightning Rod'}
@@ -10122,14 +10121,13 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Dustox': {bs: {hp: 70, sa: 90, sd: 105, sp: 85}},
   'Duraludon': {otherFormes: ['Duraludon-Mega']},
   'Eevee': {bs: {at: 65}, otherFormes: ['Eevee-LetsGO']},
-  'Eevee-LetsGO': {bs: {hp: 65,at: 75, df: 70, sa: 65, sd: 85, sp: 75}, 
+  'Eevee-LetsGO': {bs: {hp: 65,at: 75, df: 70, sa: 65, sd: 85, sp: 75},
                    abilities: {0: 'Adaptability'},
                    types: ['Normal'],
                    weightkg: 6.5,
                   },
   'Eldegoss': {bs: {sa: 90}},
   'Electrode': {bs: {sa: 90}, abilities:{0: 'Electric Surge'}},
-  'Eternatus-Eternamax': {bs: {hp: 140, at: 105, df: 110, sa: 185, sd: 110, sp: 140}, weightkg: 950, abilities: {0: 'Levitate'}},
   'Emboar': {types: ['Fire', 'Dark']},
   'Emolga': {bs: {at: 95, sa: 95, sp: 110}},
   'Espathra': {bs: {sd: 70}},
@@ -10180,7 +10178,7 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Heliolisk': {bs: {sa: 115}},
   'Hitmonchan': {bs: {hp: 60}},
   'Hitmonlee': {bs: {hp: 60}},
-  'Hoothoot': {bs: {sa: 66}}, 
+  'Hoothoot': {bs: {sa: 66}},
   'Hoppip': {bs: {at: 45}},
   'Houndstone': {types: ['Ghost', 'Ground'], bs: {at: 111}},
   'Hydrapple': {bs: {sa: 130}},
@@ -10235,7 +10233,7 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Melmetal': {bs: {sa: 65, sd: 34, sp: 80}},
   'Metapod': {bs: {at: 60}},
   'Mewtwo': {bs: {hp: 110, df: 100, sd: 130}, otherFormes: ['Mewtwo-Mega-X', 'Mewtwo-Mega-Y', 'Mewtwo-Armadura']},
-  'Mewtwo-Armadura': {bs: {hp: 400, at: 150, df: 250, sa: 180, sd: 250, sp: 100}, 
+  'Mewtwo-Armadura': {bs: {hp: 400, at: 150, df: 250, sa: 180, sd: 250, sp: 100},
                       abilities: {0: 'Magic Bounce'},
                       weightkg: 6500,
                       },
@@ -10309,7 +10307,7 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Ribombee': {bs: {sd: 75}, abilities: {0: 'Tinted Lens'}},
   'Rillabom': {bs: {sp: 86}},
   'Roselia': {bs: {at: 70}},
-  'Royaleon': {types: ['Normal'], 
+  'Royaleon': {types: ['Normal'],
                bs: {hp: 110, at:60, df: 95, sa: 130, sd: 65, sp: 65},
                abilities: {0: 'Realeza'}},
   'Sableye': {bs: {hp: 75, at: 90, df: 90, sa: 90, sd: 80}},
@@ -10413,7 +10411,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Wooper': {bs: {at: 50, sa: 35, sd: 35}},
   'Wormadam-Plant': {bs: {hp: 80, df: 95, sa: 95}},
   'Xatu': {bs: {sp: 100}},
-  'Xurkitree': {bs: {hp: 73, df: 61, sa: 143}},
   'Zangoose': {bs: {hp: 83, df: 70, sd: 70, sp: 100}},
   'Zebstrika': {bs: {hp: 85, at: 110}, abilities: {0: 'Reckless'}},
   'Zubat': {bs: {at: 55, sp:75}},
@@ -10466,14 +10463,6 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Sheer Force'},
     baseSpecies: 'Copperajah',
   },
-  'Dialga-Primal': {
-    types: ['Steel', 'Dragon'],
-    bs: {hp: 100, at: 120, df: 150, sa: 185, sd: 130, sp: 90},
-    weightkg: 683,
-    abilities: {0: 'Primal Armor'},
-    gender: 'N',
-    baseSpecies: 'Dialga',
-  },
   'Drednaw-Mega': {
     types: ['Water', 'Rock'],
     bs: {hp: 90, at: 145, df: 130, sa: 58, sd: 88, sp: 74},
@@ -10496,22 +10485,22 @@ const ANIL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Flapple',
   },
   'Garbodor-Mega': {
-    types: ['Poison', 'Steel'], 
-    bs: {hp: 100, at: 125, df: 112, sa: 95, sd: 112, sp: 55}, 
+    types: ['Poison', 'Steel'],
+    bs: {hp: 100, at: 125, df: 112, sa: 95, sd: 112, sp: 55},
     abilities: {0: 'Magnet Pull'},
     baseSpecies: 'Garbodor',
     weightkg: 200
   },
   'Grimmsnarl-Mega': {
     types: ['Dark', 'Fairy'],
-    bs: {hp: 95, at: 150, df: 85, sa: 115, sd: 75, sp: 90}, 
+    bs: {hp: 95, at: 150, df: 85, sa: 115, sd: 75, sp: 90},
     abilities: {0: 'Sheer Force'},
     baseSpecies: 'Grimmsnarl',
     weightkg: 100
   },
   'Hatterene-Mega': {
-    types: ['Psychic', 'Fairy'], 
-    bs: {hp: 57, at: 110, df: 115, sa: 156, sd: 123, sp: 49}, 
+    types: ['Psychic', 'Fairy'],
+    bs: {hp: 57, at: 110, df: 115, sa: 156, sd: 123, sp: 49},
     abilities: {0: 'Magic Bounce'},
     baseSpecies: 'Hatterene'
   },
@@ -10609,29 +10598,29 @@ class Specie implements I.Specie {
   private static readonly EXCLUDE = new Set(['bs', 'otherFormes']);
 
   constructor(name: string, data: SpeciesData) {
-this.kind = 'Species';
-this.id = toID(name);
-this.name = name as I.SpeciesName;
+    this.kind = 'Species';
+    this.id = toID(name);
+    this.name = name as I.SpeciesName;
 
-const baseStats: Partial<I.StatsTable> = {};
-baseStats.hp = data.bs?.hp;
-baseStats.atk = data.bs?.at;
-baseStats.def = data.bs?.df;
-baseStats.spa = gen >= 2 ? data.bs?.sa : data.bs?.sl;
-baseStats.spd = gen >= 2 ? data.bs?.sd : data.bs?.sl;
-baseStats.spe = data.bs?.sp;
-this.baseStats = baseStats as I.StatsTable;
-// Hack for getting Gmax pokemon out of existence in Gen 9+
-if (data.otherFormes) {
-  this.otherFormes = data.otherFormes as I.SpeciesName[];
-  if (gen >= 9 && !['toxtricity', 'urshifu'].includes(this.id)) {
-this.otherFormes = this.otherFormes.filter(f => !f.endsWith('-Gmax'));
-if (!this.otherFormes.length) this.otherFormes = undefined;
+    const baseStats: Partial<I.StatsTable> = {};
+    baseStats.hp = data.bs?.hp;
+    baseStats.atk = data.bs?.at;
+    baseStats.def = data.bs?.df;
+    baseStats.spa = gen >= 2 ? data.bs?.sa : data.bs?.sl;
+    baseStats.spd = gen >= 2 ? data.bs?.sd : data.bs?.sl;
+    baseStats.spe = data.bs?.sp;
+    this.baseStats = baseStats as I.StatsTable;
+    // Hack for getting Gmax pokemon out of existence in Gen 9+
+    if (data.otherFormes) {
+      this.otherFormes = data.otherFormes as I.SpeciesName[];
+      if (gen >= 9 && !['toxtricity', 'urshifu'].includes(this.id)) {
+        this.otherFormes = this.otherFormes.filter(f => !f.endsWith('-Gmax'));
+        if (!this.otherFormes.length) this.otherFormes = undefined;
         if (this.otherFormes) this.otherFormes = [...new Set(this.otherFormes)];
       }
     }
 
-    assignWithout(this, data, Specie.EXCLUDE);
+      assignWithout(this, data, Specie.EXCLUDE);
   }
 }
 const SPECIES_BY_ID: Array<{[id: string]: Specie}> = [];
